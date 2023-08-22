@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const messages = {
 		success: 'Your data has been saved in localStorage!',
 		error: 'Error! Please try again.',
-		nosave: 'You chose not to save your data.',
+		nosave: 'You choose not to save your data.',
 	}
 
 	// Set initial state of checkbox from localStorage
