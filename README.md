@@ -1,4 +1,4 @@
-# Log In Element with localStorage
+# Log In element with localStorage
 
 This simple JavaScript application allows users to input their email and password, along with a checkbox indicating whether they want to save the data. If the user decides to save the data and inputs are valid, the information is stored in the browser's localStorage. The app provides messages for successful data saving, not saving, and errors. The checkbox state is also persisted across page reloads.
 
