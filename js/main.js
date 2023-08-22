@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	const message = document.querySelector('.message')
 	const latinRegex = /[a-zA-Z]/
 	const messages = {
-		success: 'Your data saved in localStorage!',
-		error: 'Error! Please try again',
-		nosave: 'You chose not to save your data',
+		success: 'Your data has been saved in localStorage!',
+		error: 'Error! Please try again.',
+		nosave: 'You chose not to save your data.',
 	}
 
 	function setCheckboxState() {
@@ -38,10 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
 				localStorage.setItem('password', passwordInput.value)
 				clearInputs()
 				showMessage(messages.success)
-			} else if (!checkbox.checked) {
+			} else if (
+				!checkbox.checked &&
+				validateUserInput(emailInput.value) &&
+				validateUserInput(passwordInput.value)
+			) {
 				clearInputs()
 				showMessage(messages.nosave)
 			} else {
+				clearInputs()
 				showMessage(messages.error)
 			}
 		})
@@ -52,8 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function clearLocalStorageOnReload() {
-		document.addEventListener('beforeunload', () => {
-			localStorage.clear()
+		window.addEventListener('beforeunload', event => {
+			event.returnValue =
+				'Are you sure you want to leave? Your changes may not be saved.'
 		})
 	}
 
