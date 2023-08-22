@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&display=swap');
+
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: $white;
+	font-family: 'Barlow', sans-serif;
+}
+
+.container {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	gap: 12px;
+}
+
+.sign_in {
+	padding: 20px;
+	width: 380px;
+	border-radius: 20px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+h1 {
+	font-size: 32px;
+	line-height: 130%;
+	color: $accent;
+	font-weight: 700;
+}
+
+.inputs {
+	margin-top: 14px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.sign_in_text {
+	font-size: 18px;
+	color: $black;
+	line-height: 130%;
+}
+
+.sign_in_input {
+	margin-top: 5px;
+	width: 100%;
+	padding: 10px 20px;
+	border-radius: 100px;
+	border: solid 2px $grey;
+	color: $grey;
+
+	transition: border .1s ease-in-out;
+}
+
+.sign_in_input:focus {
+	border: solid 2px $accent;
+	color: $accent;
+}
+
+.checkbox {
+	margin-top: 14px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.checkbox_text {
+	line-height: 130%;
+	font-size: 14px;
+}
+
+button {
+	margin-top: 14px;
+	width: 100%;
+	padding: 12px 20px;
+	border-radius: 100px;
+	background-color: $accent;
+	color: $white;
+
+	transition: all .1s ease-in-out;
+}
+
+button:hover {
+	scale: (1.01);
+}
+
+
+.message {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: $accent;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 100px;
+	opacity: 0;
+	transition: opacity 0.3s;
+	pointer-events: none;
+	z-index: 1000;
+}
